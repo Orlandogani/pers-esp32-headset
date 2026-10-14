@@ -1,0 +1,5 @@
+(fp_lib_table
+	(version 7)
+	(lib (name "orga") (type "KiCad") (uri "${KIPRJMOD}/lib/orga/orga.pretty") (options "") (descr "ORGA project footprints"))
+	(lib (name "lcsc") (type "KiCad") (uri "${KIPRJMOD}/lib/lcsc/lcsc.pretty") (options "") (descr ""))
+)

@@ -1,0 +1,28 @@
+(footprint "MountingHole_2.4mm_M2"
+	(version 20240108)
+	(generator "pcbnew")
+	(generator_version "8.0")
+	(layer "F.Cu")
+	(descr "Mounting hole 2.4 mm NPTH, M2 screw clearance with FDM margin (ORGA rev A). Courtyard = 7 mm part-free zone on both sides.")
+	(tags "mounting hole 2.4mm M2 NPTH")
+	(property "Reference" "H**"
+		(at 0 -4.2 0)
+		(layer "F.SilkS")
+		(effects (font (size 1 1) (thickness 0.15)))
+	)
+	(property "Value" "MountingHole_2.4mm_M2"
+		(at 0 4.2 0)
+		(layer "F.Fab")
+		(effects (font (size 1 1) (thickness 0.15)))
+	)
+	(attr exclude_from_pos_files exclude_from_bom)
+	(fp_circle (center 0 0) (end 1.2 0) (stroke (width 0.1) (type solid)) (fill none) (layer "F.Fab"))
+	(fp_circle (center 0 0) (end 3.5 0) (stroke (width 0.05) (type solid)) (fill none) (layer "F.CrtYd"))
+	(fp_circle (center 0 0) (end 3.5 0) (stroke (width 0.05) (type solid)) (fill none) (layer "B.CrtYd"))
+	(pad "" np_thru_hole circle
+		(at 0 0)
+		(size 2.4 2.4)
+		(drill 2.4)
+		(layers "*.Cu" "*.Mask")
+	)
+)

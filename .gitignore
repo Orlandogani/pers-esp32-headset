@@ -1,0 +1,35 @@
+# ---- KiCad-generated
+.history/
+*-backups/
+_autosave-*
+fp-info-cache
+~*.lck
+*.lck
+*.kicad_prl
+*.bak
+_restore_backup_*/
+backup_*/
+.mcp-backups/
+
+# ---- reports (regenerate any time)
+ERC.rpt
+*.rpt
+*_drc_violations.json
+
+# ---- reference-only material
+orga-v1/
+mech/ref/
+mech/sony-wh1000-mx5-1/
+mech/orga_mech_package_v0.1.zip
+
+# ---- generated mech outputs (rebuild with: python mech/src/build_all.py)
+mech/out/print/
+mech/out/step/
+mech/out/_obsolete/
+mech/out/*.step
+mech/**/__pycache__/
+*.pyc
+
+# ---- scratch
+_claude_backup/
+_to_delete/

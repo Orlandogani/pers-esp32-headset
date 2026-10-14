@@ -1,0 +1,245 @@
+name,value,src,note
+M1,A,decision M1,PCB component side faces the OUTER shell
+concept,C2,decision,"cell in the right cup, 5-wire harness"
+yoke,HS35-style horseshoe yoke,decision revB (2026-10-13),"external horseshoe yoke around the upper half of the cup, plastic snap studs front + rear at y=0, swivel collar at the crown, S-arm on the slider; replaces the rev A.3 tunnel arm"
+wall_fdm,2.0,doc 05,
+wall_sla_mjf,1.6,doc 05,
+clr_part_fdm,0.5,doc 05,shell over tallest component
+clr_pcb_pocket_fdm,0.3,doc 05,per side
+clr_slide_fdm,0.3,doc 05,per side
+fillet_in,0.5,doc 05,
+fillet_cosmetic_small,1.0,doc 05,
+fillet_cosmetic_shell,2.0,decision revA,R3 -> R2 so the jack overmold hole clears the edge round
+m2_insert_hole_d,3.2,assumed-VERIFY,use insert vendor's value
+m2_insert_hole_depth,4.0,assumed-VERIFY,
+m2_boss_od,6.4,doc 05,>= 2x insert OD
+m2_clear_d,2.4,doc 03,FDM board hole / screw clearance
+pcb_keepout_d,7.0,doc 03,part-free ring around each mounting hole
+pad_open_h,75.0,assumed-VERIFY,doc 06 target; XM5 model measures 66
+pad_open_w,48.0,assumed-VERIFY,doc 06 target; XM5 model measures 44.6
+pad_ring_w,15.0,assumed-VERIFY,
+pad_t,22.0,assumed-VERIFY,uncompressed
+pad_tc,12.0,assumed-VERIFY,compressed on head
+cup_n,2.6,decision concept,superellipse exponent of the cup plan shape
+cup_tilt_deg,0.0,assumed,"XM5-style front tilt, 0 for rev A"
+baffle_t,1.6,doc 02 (1.5-2.0); 1.6 to save mass,
+front_recess,16.0,assumed-VERIFY,"baffle recess behind pad face, I-13"
+rear_cavity_L,18.3,"concept report (M1-A, C2)",baffle rear face -> shell outer; +4 with EC10E wheel
+rear_cavity_R,17.0,assumed-VERIFY,driver 8 + cell 6.6 + clearances
+antenna_keepout,15.0,"doc 05 / MR-018, VERIFY Espressif",
+antenna_below_wall,6.0,assumed,board flat edge below cavity top wall
+drv_od,40.0,assumed-VERIFY,M5
+drv_flange_t,1.5,assumed-VERIFY,
+drv_body_h,8.0,assumed-VERIFY,rear projection behind baffle
+drv_mag_d,20.0,assumed-VERIFY,
+drv_rim_h,3.0,assumed-VERIFY,
+drv_vent_gap,1.0,assumed,
+pcb_t,1.6,fab standard,
+pcb_inset,2.0,decision I-12,board outline = cavity - inset
+module_lwh_0,18.0,datasheet ESP32-S3-WROOM-1,
+module_lwh_1,25.5,datasheet ESP32-S3-WROOM-1,
+module_lwh_2,3.1,datasheet ESP32-S3-WROOM-1,
+antenna_len,7.0,assumed-VERIFY,module antenna end
+usb_lwh_0,8.94,datasheet USB4105-GF-A,
+usb_lwh_1,7.35,datasheet USB4105-GF-A,
+usb_lwh_2,3.31,datasheet USB4105-GF-A,
+usb_mouth_0,8.34,datasheet USB4105-GF-A,
+usb_mouth_1,2.56,datasheet USB4105-GF-A,
+jack_h,5.0,assumed-VERIFY,SJ2-3593D
+jack_overmold_d,8.0,assumed-VERIFY,"boom plug, measure"
+sidekey_travel,0.2,assumed-VERIFY,EVQ-P7A
+sidekey_force_N,1.6,assumed-VERIFY,
+led_rgb_lwh_0,3.2,datasheet Wurth 150141M173100 (H VERIFY),
+led_rgb_lwh_1,2.8,datasheet Wurth 150141M173100 (H VERIFY),
+led_rgb_lwh_2,1.9,datasheet Wurth 150141M173100 (H VERIFY),
+mic_lwh_0,4.0,datasheet IM73D122V01,
+mic_lwh_1,3.0,datasheet IM73D122V01,
+mic_lwh_2,1.2,datasheet IM73D122V01,
+mic_port_pcb_d,0.8,datasheet IM73D122V01,
+mic_port_shell_d,1.2,doc 05,drill to size after FDM
+mic_gasket_t,1.8,doc 05,"PORON 1.5-2, 25-35 % compression"
+wheel,"SIQ-02FVS3 (edge-drive dial encoder, push)",routing chat revA.5,"replaces EVQ-WK; dial built into the encoder, sits on the PCB; 15 detents"
+wheel_mount_h,1.5,assumed-VERIFY,SIQ-02FVS3 body height under the dial (dial top 4.0 - dial t)
+cell_tlw_0,6.0,assumed-VERIFY,"603450 class, measure the bought cell"
+cell_tlw_1,34.0,assumed-VERIFY,"603450 class, measure the bought cell"
+cell_tlw_2,50.0,assumed-VERIFY,"603450 class, measure the bought cell"
+cell_swell,0.1,MR-019,
+cell_clear_side,0.5,MR-019,
+cell_mass,20.0,assumed-VERIFY,
+band_adjust_per_side,25.0,doc 06,
+band_detent_pitch,5.0,doc 06,
+clamp_N_0,2.5,MR-005,at 150 mm cup spacing
+clamp_N_1,4.5,MR-005,at 150 mm cup spacing
+steel_band_wt_0,1.0,assumed-VERIFY,"spring steel t x w, M6"
+steel_band_wt_1,12.0,assumed-VERIFY,"spring steel t x w, M6"
+steel_to_antenna_min,15.0,MR-018,concept gives >= 22
+cup_swivel_yaw,15.0,doc 06,+/- deg
+cup_swivel_tilt,10.0,doc 06,+/- deg
+harness_wires,5,decision C2,"HPR_P, HPR_N, BAT+, BAT-, NTC"
+shell_d0,20.9,decision revA,outer-face depth at x=0 (shallow wedge); set by jack hole (front) and wheel slot (rear)
+shell_slope,0.02142857142857143,decision revA,depth grows 0.75 mm per 35 mm toward the rear
+board_bot_z,9.2,concept report,drv_body_h + vent_gap + bottom pads
+module_flat_x,33.0,decision revA.3,"module rotated 90 deg, antenna end flush with a board flat at the REAR edge"
+module_cy,14.0,decision revA.3,module centre Y
+usb_tab_halfw,5.5,decision revA,board tab under USB-C
+usb_pocket_0,12.6,assumed-VERIFY,outside overmold pocket w x h x depth
+usb_pocket_1,7.0,assumed-VERIFY,outside overmold pocket w x h x depth
+usb_pocket_2,1.0,assumed-VERIFY,outside overmold pocket w x h x depth
+usb_opening_0,9.2,assumed-VERIFY,plug opening in thinned wall
+usb_opening_1,3.6,assumed-VERIFY,plug opening in thinned wall
+usb_plug_axis_above_board,1.6,assumed-VERIFY,doc 03
+jack_s,30.0,decision revA.2,"rim arc position [mm from front pivot, via bottom]"
+jack_dir_deg,200.0,decision revA,"plug axis, 180 = straight front, 200 = front and 20 deg down"
+jack_len,20.1,doc envelope csv,
+jack_axis_above_board,2.5,assumed-VERIFY,
+jack_hole_d,8.6,assumed-VERIFY,"= boom overmold 8.0 + 0.6, through the wall so the plug seats fully"
+jack_mouth_inset,1.0,decision revA,jack face inside the inner wall (curved-wall clearance)
+key_mfb_s,118.0,decision revA.2,rear-lower rim
+key_pwr_s,54.0,decision revA.2,"front-bottom rim, away from MFB"
+key_axis_above_board,0.7,assumed-VERIFY,EVQ-P7A actuator centre
+key_act_from_wall,2.4,doc 03,actuator face 0.4 inside board edge
+key_pretravel,0.1,doc 05,
+key_overtravel,0.05,doc 05,
+wheel_s,92.0,decision revA.2,"rear-bottom rim, on the flat part"
+wheel_d,14.4,routing chat revA.5 (datasheet 14.5 +/-0.1),SIQ-02FVS3 dial
+wheel_t,2.5,assumed-VERIFY,"SIQ-02FVS3 dial thickness, not given in the datasheet"
+wheel_protrude,1.5,doc 05 (1.5-2.5),
+wheel_z0_above_board,1.5,routing chat revA.5 (dial top 4.0 above board) - wheel_t,dial underside above board
+enc_body_lw_0,11.1,"datasheet SIQ-02FVS3 mount area (approx.), VERIFY",body footprint behind the dial centre (along normal x tangent)
+enc_body_lw_1,10.0,"datasheet SIQ-02FVS3 mount area (approx.), VERIFY",body footprint behind the dial centre (along normal x tangent)
+wheel_tab_0,8.0,routing chat revA.5,"PCB tab under the dial: width, reach from the dial centre along the wheel normal"
+wheel_tab_1,4.0,routing chat revA.5,"PCB tab under the dial: width, reach from the dial centre along the wheel normal"
+wheel_push,True,datasheet SIQ-02FVS3,push switch built in; slide force 3-6 N
+led_xy_0,5.0,decision revA.3,RGB + charge LED side by side; moved off the new module position
+led_xy_1,-28.0,decision revA.3,RGB + charge LED side by side; moved off the new module position
+lguide_wh_0,5.8,decision revA,clear light guide section
+lguide_wh_1,2.8,decision revA,clear light guide section
+mk1_xy_0,-17.0,decision revA.2,"voice mic, bottom side, front-lower; clear of the lower-front shell screw and the jack"
+mk1_xy_1,-35.0,decision revA.2,"voice mic, bottom side, front-lower; clear of the lower-front shell screw and the jack"
+mk2_xy_0,10.0,decision revA.3,"reference mic, bottom side, top; >= 15 mm from the antenna (now at the rear)"
+mk2_xy_1,36.0,decision revA.3,"reference mic, bottom side, top; >= 15 mm from the antenna (now at the rear)"
+mic_boss_od,5.0,decision revA,
+mic_channel_d,2.0,assumed-VERIFY,"wider channel, 1.2 at the skin"
+pivot_z,8.0,decision revA,fork pivot height in cup frame
+pivot_pin_d,5.0,decision revA,
+pivot_hole_d,5.2,doc 05 slide fit,
+pivot_boss_0,10.0,decision revA,outward boss d x height
+pivot_boss_1,2.0,decision revA,outward boss d x height
+harness_bore_d,3.0,assumed-VERIFY,5 x 28 AWG bundle
+shell_screw_t_deg_0,60.0,decision revA.3,superellipse angle of the 2 upper shell screws (clear of antenna and arm tunnel)
+shell_screw_t_deg_1,97.0,decision revA.3,superellipse angle of the 2 upper shell screws (clear of antenna and arm tunnel)
+shell_screw_s_low_0,44.0,decision revA.2,rim arc position of the 2 lower shell screws (gaps between edge parts)
+shell_screw_s_low_1,105.0,decision revA.2,rim arc position of the 2 lower shell screws (gaps between edge parts)
+shell_screw_inset,2.2,decision revA,boss centre inside the inner wall; screw head clears the skirt
+pcb_holes_0,"(0.0, -37.0)","routing chat revA.5 (H1), revA.3",MR-011: H1 within 10 mm of the USB-C rear; 2 >= 15 mm from antenna; 3 clear of the arm tunnel
+pcb_holes_1,"(22.0, -12.0)","routing chat revA.5 (H1), revA.3",MR-011: H1 within 10 mm of the USB-C rear; 2 >= 15 mm from antenna; 3 clear of the arm tunnel
+pcb_holes_2,"(-20.0, 18.0)","routing chat revA.5 (H1), revA.3",MR-011: H1 within 10 mm of the USB-C rear; 2 >= 15 mm from antenna; 3 clear of the arm tunnel
+pcb_notch_r,3.7,decision revA,board notch around shell screw bosses
+skirt_len,16.0,= front_recess,
+padring_t,2.0,decision revA,
+padring_lip,1.0,assumed-VERIFY,pad sleeve hooks over this
+lip_h,2.0,decision revA,frame locating lip inside shell
+drv_hole_d,36.0,assumed-VERIFY,front opening for the diaphragm
+drv_seat_ring_0,44.0,decision revA,locating ring on baffle rear face
+drv_seat_ring_1,1.5,decision revA,locating ring on baffle rear face
+cell_center_x_rear,4.0,decision revA,cell shifted toward deep (rear) side
+tray_z,8.5,concept report,"tray floor bottom, 0.5 over magnet"
+tray_floor_t,1.2,decision revA,
+tray_rail_0,1.5,decision revA,rail t x h
+tray_rail_1,4.0,decision revA,rail t x h
+pad_face_y_h,75.0,doc 06/MR-005,pad faces at 150 mm spacing in the assembly pose
+fork_arm_0,6.0,decision revA,arm width (plan) x thickness (Z)
+fork_arm_1,7.0,decision revA,arm width (plan) x thickness (Z)
+fork_clear,0.3,doc 05,
+fork_bar_y,58.0,decision revA.1,"oval fork: inner edge at the crown, cup frame (sides follow the pivot bosses)"
+fork_pin_y_0,72.0,decision revA,swivel pin span in cup frame Y (= Z_H)
+fork_pin_y_1,80.0,decision revA,swivel pin span in cup frame Y (= Z_H)
+swivel_pin_d,6.0,decision revA,
+band_center_z,14.5,derived revA,"band arc centre Z_H (rail through Y_H 125.5, Z_H 82; apex 157)"
+band_r,142.5,derived revA,band arc radius: 95th-pct vertex 145 + cushion 8 + half section
+band_half_deg,40.0,decision revA,
+band_section_0,26.0,decision revA,width (X_H) x radial
+band_section_1,9.0,decision revA,width (X_H) x radial
+rail_section_0,10.0,decision revA,slider rail width x radial
+rail_section_1,4.0,decision revA,slider rail width x radial
+steel_slot_0,12.6,decision revA,
+steel_slot_1,1.4,decision revA,
+slider_top_deg,30.0,decision revA,
+density_petg,1.27,datasheet typical,
+fill_factor,0.9,assumed,thin-wall FDM parts print mostly solid
+arm_t_e,120.0,decision revA.3,superellipse angle where the arm leaves the cup (top-front rim)
+arm_inset0,0.8,decision revA.3,arm outer edge to cavity wall
+arm_w,6.0,decision revA.3,arm width in the cup plane (inside the tunnel)
+arm_t,5.0,decision revA.3,arm thickness along Z (inside the tunnel)
+arm_clr,0.6,"doc 05 (moving part, FDM)",
+tunnel_wall,1.6,decision revA.3,
+arm_pivot_z,9.25,decision revA.3,tilt axis height; centred so the tilted arm stays 0.3 under the shell plate and 1 mm over the baffle
+arm_tilt_deg,7.0,decision revA.3,"+/- tilt; doc 06 asks 10, pad compliance covers the rest (VERIFY on head)"
+arm_lug_r,4.0,decision revA.3,
+arm_lug_hole_d,4.3,decision revA.3,runs on the M3 shoulder screw's 4 mm shoulder
+arm_wall_hole_d,4.2,decision revA.3,
+arm_screw_head_0,7.5,assumed-VERIFY,counterbore d x depth for the shoulder-screw head
+arm_screw_head_1,1.2,assumed-VERIFY,counterbore d x depth for the shoulder-screw head
+arm_insert_boss_0,9.0,decision revA.4,nut-trap boss d x length: nut sits 0.7 behind the boss face so the 4 mm thread of an ISO 7379 4x8 shoulder screw fully engages
+arm_insert_boss_1,3.2,decision revA.4,nut-trap boss d x length: nut sits 0.7 behind the boss face so the 4 mm thread of an ISO 7379 4x8 shoulder screw fully engages
+m3_insert_hole_d,4.0,assumed-VERIFY,M3 heat-set insert hole
+m3_insert_depth,5.0,assumed-VERIFY,
+arm_ext_0,7.0,decision revA.3,external arm width x thickness
+arm_ext_1,6.5,decision revA.3,external arm width x thickness
+padring_spigot_len,6.0,decision revA.4,spigot depth into the frame skirt
+padring_snap_0,0.53,decision revA.4,"bump protrusion, bump length along rim, bump centre above skirt end"
+padring_snap_1,6.0,decision revA.4,"bump protrusion, bump length along rim, bump centre above skirt end"
+padring_snap_2,4.5,decision revA.4,"bump protrusion, bump length along rim, bump centre above skirt end"
+padring_snap_t_deg_0,30.0,decision revA.4,6 snap tabs around the ring
+padring_snap_t_deg_1,90.0,decision revA.4,6 snap tabs around the ring
+padring_snap_t_deg_2,150.0,decision revA.4,6 snap tabs around the ring
+padring_snap_t_deg_3,210.0,decision revA.4,6 snap tabs around the ring
+padring_snap_t_deg_4,270.0,decision revA.4,6 snap tabs around the ring
+padring_snap_t_deg_5,330.0,decision revA.4,6 snap tabs around the ring
+skirt_groove_depth,0.65,decision revA.4,"> bump protrusion, leaves 1.35 mm skirt wall"
+m3_nut_0,5.6,datasheet ISO 4032 M3 (5.5 AF x 2.4) + 0.1 FDM,nut trap AF x thickness
+m3_nut_1,2.5,datasheet ISO 4032 M3 (5.5 AF x 2.4) + 0.1 FDM,nut trap AF x thickness
+m3_clear_d,3.4,doc 05 FDM,
+harness_groove_0,2.4,decision revA.4,"width x depth for the 5-core harness (≈ 2 mm OD, VERIFY)"
+harness_groove_1,1.6,decision revA.4,"width x depth for the 5-core harness (≈ 2 mm OD, VERIFY)"
+wheel_plug_gap,0.55,decision revA.4,frame plug top to wheel underside
+steel_pin_d,2.0,decision revA.4,cross pin retaining the steel band (M2 screw or 2 mm dowel)
+steel_pin_deg,39.0,decision revA.4,pin position on the +Y end of BAND-TOP
+yaw_limit_deg,15.0,doc 06,+/- swivel; the slider set screw rides in an arc groove on the pin that stops it
+pivot_screw,"ISO 7379 shoulder screw, d 4 x 8, M3 thread",assumed-VERIFY,thread length 4 mm assumed
+steel_band_len,171.0,derived revA.4,"65Mn 12 x 1 mm, arc -30..37.5 deg at r = R + 3.35"
+yk_t,3.5,decision revB,yoke band radial thickness
+yk_w,10.0,decision revB,yoke band width along Z (cup axis)
+yk_gap_side,0.6,"doc 05 (moving part, FDM)",radial gap to the shell at the pivots
+yk_gap_top,2.6,decision revB (tilt sweep),radial gap at the crown: the crown region swings ~1.7 mm outward at 10 deg tilt
+yk_pivot_z,9.25,decision revB,tilt axis height on the shell side wall (same as rev A.3)
+yk_tilt_free,10.0,doc 06,+/- tilt without contact
+yk_tilt_stop,12.0,decision revB,"+/- hard stop: wedge lug on the stud in an arc slot in the yoke end (off the head the cup would otherwise flop, its CoM is ~9 mm ear-side of the axis)"
+yk_lug_0,10.0,decision revB,"stop lug half-angle [deg], radial height, radial clearance in the slot"
+yk_lug_1,1.2,decision revB,"stop lug half-angle [deg], radial height, radial clearance in the slot"
+yk_lug_2,0.3,decision revB,"stop lug half-angle [deg], radial height, radial clearance in the slot"
+yk_stud_d,6.0,decision revB,plastic pivot stud moulded on the shell side wall (no metal near the antenna)
+yk_hole_d,6.4,doc 05 slide fit (+0.4 FDM),yoke end hole
+yk_end_d,12.0,decision revB,round boss at each yoke end
+yk_stud_chamfer,1.0,decision revB,lead-in on the stud tip for the snap-on
+yk_inner_boss_0,10.0,decision revB,boss inside the wall behind each stud: d x height (0.8 mm to the board edge)
+yk_inner_boss_1,1.2,decision revB,boss inside the wall behind each stud: d x height (0.8 mm to the board edge)
+yk_pocket_0,6.5,decision revB,"cosmetic panel recess on the yoke sides: width x depth, starts this far above the pivot"
+yk_pocket_1,1.5,decision revB,"cosmetic panel recess on the yoke sides: width x depth, starts this far above the pivot"
+yk_pocket_2,8.0,decision revB,"cosmetic panel recess on the yoke sides: width x depth, starts this far above the pivot"
+swivel_collar_0,12.0,decision revB,slider collar at the yoke crown: d x length (the visible swivel ring)
+swivel_collar_1,7.0,decision revB,slider collar at the yoke crown: d x length (the visible swivel ring)
+swivel_axial_gap,0.5,doc 05,collar to yoke crown boss
+sarm_section_0,12.0,decision revB,S-arm (slider lower end) width X_H x thickness
+sarm_section_1,4.0,decision revB,S-arm (slider lower end) width X_H x thickness
+sarm_start_deg,56.0,decision revB,band-arc angle where the rail turns into the S-arm (outside the BAND-TOP sleeve over the full +/-15 mm travel)
+sarm_mid_0,127.2,decision revB,"S-arm waypoint Y_H, Z_H: bows outward, then drops vertically into the collar"
+sarm_mid_1,79.0,decision revB,"S-arm waypoint Y_H, Z_H: bows outward, then drops vertically into the collar"
+harness_entry_0,-12.0,decision revB,"harness hole in the outer face, cup frame x, y, hole d, grommet counterbore d (outside of the yoke: never pinched in tilt)"
+harness_entry_1,44.0,decision revB,"harness hole in the outer face, cup frame x, y, hole d, grommet counterbore d (outside of the yoke: never pinched in tilt)"
+harness_entry_2,3.4,decision revB,"harness hole in the outer face, cup frame x, y, hole d, grommet counterbore d (outside of the yoke: never pinched in tilt)"
+harness_entry_3,6.0,decision revB,"harness hole in the outer face, cup frame x, y, hole d, grommet counterbore d (outside of the yoke: never pinched in tilt)"
+cap_disc_0,56.0,decision revB,"cap disc on the outer face: d, centre y, ring-groove width, groove depth"
+cap_disc_1,5.0,decision revB,"cap disc on the outer face: d, centre y, ring-groove width, groove depth"
+cap_disc_2,1.6,decision revB,"cap disc on the outer face: d, centre y, ring-groove width, groove depth"
+cap_disc_3,0.8,decision revB,"cap disc on the outer face: d, centre y, ring-groove width, groove depth"

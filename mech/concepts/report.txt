@@ -1,0 +1,45 @@
+cavity 74 x 101 mm (W x H)
+BASELINE Ø62 board centred, M1-A: antenna-to-magnet 9.7 mm (need >= 15)
+BASELINE Ø62 board centred, M1-B: antenna-to-magnet 9.2 mm (need >= 15)
+
+C1 STACK - cell behind the left driver   cell fits in-plane: -
+  M1-A: rear cavity 24.9 mm (with 9 mm EC10E wheel at rim: 28.9)
+      antenna to magnet                  29.3 mm  OK
+      antenna to cell                    32.6 mm  OK
+      antenna to fork pivot              50.9 mm  OK
+      antenna to steel band end          30.5 mm  OK
+      antenna to top-hinge yoke (alt)    12.4 mm  FAIL
+  M1-B: rear cavity 23.1 mm (with 9 mm EC10E wheel at rim: 23.1)
+      antenna to magnet                  28.7 mm  OK
+      antenna to cell                    32.5 mm  OK
+      antenna to fork pivot              50.8 mm  OK
+      antenna to steel band end          30.4 mm  OK
+      antenna to top-hinge yoke (alt)    12.0 mm  FAIL
+
+C2 SPLIT - cell in the right cup (5-wire harness)   cell fits in-plane: -
+  M1-A: rear cavity 18.3 mm (with 9 mm EC10E wheel at rim: 22.3)
+      antenna to magnet                  27.7 mm  OK
+      antenna to fork pivot              50.7 mm  OK
+      antenna to steel band end          30.1 mm  OK
+      antenna to top-hinge yoke (alt)    11.3 mm  FAIL
+  M1-B: rear cavity 16.5 mm (with 9 mm EC10E wheel at rim: 16.5)
+      antenna to magnet                  27.6 mm  OK
+      antenna to fork pivot              50.6 mm  OK
+      antenna to steel band end          30.0 mm  OK
+      antenna to top-hinge yoke (alt)    11.1 mm  FAIL
+
+C3 BESIDE - cell below the left driver, squarer cup   cell fits in-plane: True
+  M1-A: rear cavity 19.1 mm (with 9 mm EC10E wheel at rim: 23.1)
+      antenna to magnet                  27.8 mm  OK
+      antenna to cell                    59.1 mm  OK
+      antenna to fork pivot              50.7 mm  OK
+      antenna to steel band end          30.1 mm  OK
+      antenna to top-hinge yoke (alt)    11.4 mm  FAIL
+  M1-B: rear cavity 17.3 mm (with 9 mm EC10E wheel at rim: 17.3)
+      antenna to magnet                  27.6 mm  OK
+      antenna to cell                    59.0 mm  OK
+      antenna to fork pivot              50.7 mm  OK
+      antenna to steel band end          30.1 mm  OK
+      antenna to top-hinge yoke (alt)    11.2 mm  FAIL
+
+PNGs in /home/claude/orga_mech/concepts/out
